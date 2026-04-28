@@ -170,27 +170,6 @@ Run: `python -m pytest test_finance.py -v`
 
 ---
 
- final-status:
-    name: Final status
-    runs-on: ubuntu-latest
-    needs: [test]
-    if: always()
-    steps:
-      - name: Report result
-        run: |
-          echo "Test job result: ${{ needs.test.result }}"
-          if [ "${{ needs.test.result }}" = "success" ]; then
-            echo "All checks passed."
-            exit 0
-          else
-            echo "Some checks failed."
-            exit 1
-          fi
-
-
-
-
-
 ## Author
 
 **Name:** Geachkeang Say
